@@ -127,12 +127,12 @@ class ShowingList extends React.Component {
             switch (this.state.headerValue) {
                 case "Ilosc miejsc rosnaco":
                     sortedList = this.state.list.sort((a, b) => {
-                        return parseInt(a.room.capacity) - a.takenSeats.length - parseInt(b.room.capacity) - b.takenSeats.length 
+                        return (parseInt(a.room.capacity) - a.takenSeats.length) - (parseInt(b.room.capacity) - b.takenSeats.length) 
                     })
                     break;
                 case "Ilosc miejsc malejaco":
                     sortedList = this.state.list.sort((a, b) => {
-                        return parseInt(b.room.capacity) - b.takenSeats.length - parseInt(a.room.capacity) - a.takenSeats.length 
+                        return (parseInt(b.room.capacity) - b.takenSeats.length) - (parseInt(a.room.capacity) - a.takenSeats.length) 
                     })
                     break;
                 case "Numer sali rosnaco":

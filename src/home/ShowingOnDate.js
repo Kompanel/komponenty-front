@@ -42,7 +42,7 @@ class ShowingOnDate extends React.Component {
         } else {
             list = list.map(e =>
                 <div>
-                    <Showing date={e.date} movie={e.movie} room={e.room} takenSeats={e.takenSeats}/>
+                    <Showing date={e.date} movie={e.movie} room={e.room} takenSeats={e.takenSeats} ticketPrice={e.ticketPrice}/>
                 </div>)
         }
         return (

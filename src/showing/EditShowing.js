@@ -36,7 +36,10 @@ class EditShowing extends React.Component {
     }
 
     editShowing = () => {
-        if (this.state.headerValueRoom==='Sala' || this.state.headerValueMovie==='Film' || this.state.date==='Data') {
+        if (this.state.date === '' || this.state.price <= 0) {
+            document.getElementById("alertBox").style.visibility = "visible";
+        }
+        else if (this.state.headerValueRoom==='Sala' || this.state.headerValueMovie==='Film' || this.state.date==='Data') {
             document.getElementById("alertBox").style.visibility = "visible";
         }
         else {
@@ -139,7 +142,6 @@ class EditShowing extends React.Component {
     render() {
 
         if (this.state.redirect) {
-
             return <Redirect to="/showing" />
         }
         return (

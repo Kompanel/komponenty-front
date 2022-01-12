@@ -35,7 +35,7 @@ class CurrentShowing extends React.Component {
                 parseInt(e.date.substring(11, 13)) * 60 + parseInt(e.date.substring(14, 16)) + parseInt(e.movie.duration) >= this.state.date.getHours() * 60 + this.state.date.getMinutes()
             ).map(e =>
                 <div>
-                    <Showing date={e.date} movie={e.movie} room={e.room} takenSeats={e.takenSeats}/>
+                    <Showing date={e.date} movie={e.movie} room={e.room} takenSeats={e.takenSeats} ticketPrice={e.ticketPrice}/>
                 </div>)
         }
 
