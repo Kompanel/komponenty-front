@@ -67,6 +67,47 @@ export const getAllRoom = () => {
     })
 }
 
+export const addRoom = (room) => {
+    return axios.post('http://localhost:7777/rooms',
+        room, {
+        headers: {
+            'Content-type': 'application/json'
+        }
+    }).then(response => {
+        if (response.status === 200) {
+            return response
+        }
+    }).catch((error) => {
+        return error;
+    })
+}
+
+export const editRoom = (element, id) => {
+    return axios.put('http://localhost:7777/rooms/' + id,
+        element, {
+        headers: {
+            'Content-type': 'application/json'
+        }
+    }).then(response => {
+        if (response.status === 200) {
+            return response
+        }
+    }).catch((error) => {
+        return error;
+    })
+}
+
+export const deleteRoom = (id) => {
+    return axios.delete('http://localhost:7777/rooms/' + id
+    ).then(response => {
+        if (response.status === 200) {
+            return response
+        }
+    }).catch((error) => {
+        return error;
+    })
+}
+
 // SHOWING
 
 export const getAllShowing = () => {

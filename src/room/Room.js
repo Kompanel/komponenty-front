@@ -15,8 +15,18 @@ const Room = (props) => {
 }
 
 Room.propTypes = {
-    num: PropTypes.number.isRequired,
-    capacity: PropTypes.number.isRequired, 
+    num: (props) =>{
+        PropTypes.number.isRequired
+        if (props.num <= 0) {
+            return new Error("Numer sali musi być dodatni")
+        }
+    },
+    capacity: (props) => {
+        PropTypes.number.isRequired
+        if (props.capacity <= 0) {
+            return new Error("Sala musi posiadać dodatnią liczbę miejsc")
+        }
+    }
 }
 
 export default Room
